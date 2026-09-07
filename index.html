@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Cumple Fachinal | Festejo Criollo</title>
+
+  <!-- Meta Tags SEO & Redes Sociales / WhatsApp OpenGraph -->
+  <link rel="canonical" href="https://micumplemario.netlify.app">
+  <meta name="description" content="¡Te invito a festejar mi cumpleaños! Será una tarde inolvidable">
+  <meta name="theme-color" content="#3a1e10">
+  <meta property="og:title" content="¡Cumpleaños de Mario! 🥩🍷">
+  <meta property="og:description" content="Pulsa aquí para ver toda la info">
+  <meta property="og:url" content="https://micumplemario.netlify.app">
+  <meta property="og:image" content="https://micumplemario.netlify.app/assets/mario-invitacion.jpg">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://micumplemario.netlify.app/assets/mario-invitacion.jpg">
+
+  <!-- Favicon Criollo (SVG de mate y guitarra) -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎸</text></svg>">
+
+  <!-- Google Fonts: Rye (cartelería rústica), Caveat (manuscrita criolla), Plus Jakarta Sans (lectura moderna) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rye&family=Cinzel+Decorative:wght@700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Fondo dinámico con imagen de campo argentino y overlay cálido -->
+  <div class="bg-atmosphere" aria-hidden="true"></div>
+  <div class="embers-container" id="embersContainer" aria-hidden="true"></div>
+
+  <!-- Barra flotante de música Criolla (track.mp3) -->
+  <header class="music-floating-bar" id="musicBar">
+    <div class="music-bar-inner">
+      <button class="music-toggle-btn" id="musicToggleBtn" aria-label="Reproducir o pausar música de fondo">
+        <div class="vinyl-disc" id="vinylDisc">
+          <span class="vinyl-center">🎸</span>
+        </div>
+        <div class="music-info">
+          <span class="music-label">MÚSICA DE FONDO</span>
+          <span class="music-status" id="musicStatusText">Tocar para reproducir</span>
+        </div>
+        <div class="audio-waves" id="audioWaves" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <!-- Audio Element -->
+  <audio id="bgAudio" src="track.mp3" preload="auto" loop></audio>
+
+  <main class="main-wrapper">
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <!-- Escarapela / Sol Criollo sutil -->
+      <div class="folk-ribbon">
+        <span class="ribbon-band ribbon-blue"></span>
+        <span class="ribbon-band ribbon-white"></span>
+        <span class="ribbon-band ribbon-blue"></span>
+        <span class="ribbon-text">GRAN FESTEJO CRIOLLO</span>
+      </div>
+
+      <div class="hero-header">
+        <span class="invitation-lead">Te invito a celebrar</span>
+        <span class="invitation-lead">mi cumpleaños</span>
+        <h1 class="hero-title">
+          <span class="title-sub">FACHINAL</span>
+        </h1>
+        <div class="guarda-pampa-divider" aria-hidden="true"></div>
+      </div>
+
+      <!-- CUENTA REGRESIVA (POSTERIOR AL HERO-HEADER, ANTES DE LA IMAGEN) -->
+      <div class="countdown-section" aria-labelledby="countdown-title">
+        <div class="section-wood-plaque">
+          <div class="plaque-header">
+            <div class="clock-icon" aria-hidden="true">⏳</div>
+            <h2 id="countdown-title" class="countdown-heading">CUENTA REGRESIVA</h2>
+            <p class="countdown-sub">Faltan muy pocos días para prender el fuego:</p>
+          </div>
+
+          <div class="countdown-grid" id="countdownGrid">
+            <div class="countdown-unit">
+              <div class="unit-box">
+                <span class="unit-number" id="countDays">00</span>
+              </div>
+              <span class="unit-label">DÍAS</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-unit">
+              <div class="unit-box">
+                <span class="unit-number" id="countHours">00</span>
+              </div>
+              <span class="unit-label">HORAS</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-unit">
+              <div class="unit-box">
+                <span class="unit-number" id="countMinutes">00</span>
+              </div>
+              <span class="unit-label">MINUTOS</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-unit">
+              <div class="unit-box">
+                <span class="unit-number" id="countSeconds">00</span>
+              </div>
+              <span class="unit-label">SEGUNDOS</span>
+            </div>
+          </div>
+
+          <div class="countdown-badge-event">
+            <span class="badge-icon">🔥</span>
+            <span>Sábado 12 de Septiembre &bull; 13:00 Hs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta destacada con la imagen de Mario -->
+      <div class="hero-card-frame">
+        <div class="wood-board-card">
+          <div class="brass-screw top-left"></div>
+          <div class="brass-screw top-right"></div>
+          <div class="brass-screw bottom-left"></div>
+          <div class="brass-screw bottom-right"></div>
+
+          <div class="portrait-container" id="openImageModalBtn" title="Ver invitación completa">
+            <img src="assets/mario-invitacion.jpg"
+              alt="Mario en su cumpleaños con sombrero, poncho y copa de vino tinto" class="hero-portrait-img">
+            <div class="portrait-overlay-badge">
+              <span>🔍 Ver imagen</span>
+            </div>
+          </div>
+
+          <div class="folk-quote">
+            <p class="quote-handwritten">"Será una tarde de amigos, folclore y costillares."</p>
+            <p class="quote-callout">¡No faltes!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETALLES DEL EVENTO -->
+    <section class="details-section" aria-label="Detalles de la fiesta">
+      <div class="cards-grid">
+
+        <!-- Tarjeta: Cuándo -->
+        <article class="info-card">
+          <div class="card-icon-wrapper">
+            <span class="card-icon">📅</span>
+          </div>
+          <h3 class="card-title">FECHA Y HORA</h3>
+          <div class="card-highlight">
+            <p class="primary-text">Sábado 12 de Septiembre</p>
+            <p class="secondary-text">A partir de las 13:00 hs puntual</p>
+          </div>
+          <p class="card-description">
+            Arrancamos al mediodía con las brasas a punto, copas servidas y las primeras chacareras.
+          </p>
+
+          <!-- Acción de Calendario -->
+          <div class="calendar-actions">
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cumplea%C3%B1os+de+Mario+%F0%9F%A5%82+%F0%9F%8E%B8&dates=20260912T160000Z/20260913T010000Z&details=Festejo+del+cumplea%C3%B1os+de+Mario%3A+tarde+de+amigos%2C+folclore+y+costillares.+%C2%A1Trae+tus+bebidas%21&location=Juan+Darienzo+52%2C+Perico%2C+Jujuy"
+              target="_blank" rel="noopener noreferrer" class="btn btn-calendar">
+              <svg class="btn-svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h5v5H7z" />
+              </svg>
+              <span>Calendario de Google</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Tarjeta: Dónde -->
+        <article class="info-card">
+          <div class="card-icon-wrapper">
+            <span class="card-icon">📍</span>
+          </div>
+          <h3 class="card-title">UBICACIÓN</h3>
+          <div class="card-highlight">
+            <p class="primary-text">Juan Darienzo 52</p>
+            <p class="secondary-text">Perico, Jujuy, Argentina</p>
+          </div>
+          <p class="card-description">
+            Un lindo espacio para guitarrear y compartir un asado inolvidable entre amigos.
+          </p>
+
+          <!-- Botón directo de Google Maps -->
+          <a href="https://maps.app.goo.gl/s9SDqGx3Rx8iN2z3A" target="_blank" rel="noopener noreferrer"
+            class="btn btn-maps">
+            <svg class="btn-svg" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+            <span>Cómo Llegar (Google Maps)</span>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- FOOTER CRIOLLO -->
+    <footer class="folk-footer">
+      <div class="guarda-pampa-divider" aria-hidden="true"></div>
+      <div class="footer-content">
+        <p class="footer-phrase">"No hay distancia que nos separe cuando la amistad convoca y el fueguito está
+          prendido."</p>
+        <p class="footer-copy">¡Los espero a todos para celebrar juntos!</p>
+        <span class="footer-sign">~ Fachinal ~</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- MODAL PARA VER EL AFICHE ORIGINAL COMPLETO -->
+  <div class="image-modal" id="imageModal" aria-hidden="true" role="dialog"
+    aria-label="Afiche original de la invitación">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar afiche">&times;</button>
+      <div class="modal-body">
+        <img src="assets/mario-invitacion.jpg" alt="Afiche completo cumpleaños de Mario" class="modal-flyer-img">
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
